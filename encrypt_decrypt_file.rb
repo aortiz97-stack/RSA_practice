@@ -1,9 +1,6 @@
 require_relative "./rsa_algorithm.rb"
 
 def encrypt(file_name, encrypt_key)
-    rsa = RSA_Keys.new
-    encrypt_key = rsa.e
-
     encrypt_file = File.open("encrypted_#{file_name}", "w")
 
     File.foreach(file_name) do |line|
@@ -17,5 +14,3 @@ def encrypt(file_name, encrypt_key)
     encrypt_file.close
 
 end
-
-encrypt("secret.txt")
